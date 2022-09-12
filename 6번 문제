@@ -1,0 +1,24 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	bool board[10][10] = { 0 };
+
+	for (int i = 0; i < 10; i++)
+		for (int k = 0; k < 10; k++)
+			if ((rand() % 100) < 30)
+				board[i][k] = true;
+
+	for (int i = 0; i < 10; i++) {
+		for (int k = 0; k < 10; k++)
+			if (board[i][k])
+				cout << "#";
+			else
+				cout << ".";
+		cout << endl;
+	}
+	return 0;
+}
